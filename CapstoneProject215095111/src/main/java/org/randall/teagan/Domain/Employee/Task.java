@@ -9,6 +9,7 @@ public class Task {
     private ArrayList<Employee> employees;
     private String taskDesc;
     private Date dueDate;
+    private String taskNo;
 
     private Task(){}
 
@@ -17,6 +18,7 @@ public class Task {
         this.employees = taskBuilder.employees;
         this.taskDesc = taskBuilder.taskDesc;
         this.dueDate = taskBuilder.dueDate;
+        this.taskNo = taskBuilder.taskNo;
     }
 
     public Date getDueDate() {
@@ -35,12 +37,17 @@ public class Task {
         return taskDesc;
     }
 
+    public String getTaskNo() {
+        return taskNo;
+    }
+
     public static class TaskBuilder{
 
         private Manager TaskManager;
         private ArrayList<Employee> employees;
         private String taskDesc;
         private Date dueDate;
+        private String taskNo;
 
         public TaskBuilder manager(Manager manager) {
             this.TaskManager = manager;
@@ -62,6 +69,11 @@ public class Task {
             return this;
         }
 
+        public TaskBuilder taskNo(String taskNo){
+            this.taskNo = taskNo;
+            return this;
+        }
+
         public Task build() {
             return new Task(this);
         }
@@ -74,6 +86,7 @@ public class Task {
                 " employees ='" + getEmployees() + '\'' +
                 " taskDesc ='" + getTaskDescrip() + '\'' +
                 " dueDate ='" + getDueDate() + '\'' +
+                " taskNo ='" + getTaskNo() + '\'' +
                 '}';
     }
 }

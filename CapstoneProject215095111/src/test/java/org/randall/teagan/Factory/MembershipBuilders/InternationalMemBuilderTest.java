@@ -13,8 +13,9 @@ public class InternationalMemBuilderTest {
         String memName = "FullMember";
         String memCode = "FT001";
         String nationality = "German";
+        String internationalMemID = "56466";
 
-        InternationalMember internationalMem = InternationalMemBuilder.getInternationalMember(memCode,memName,nationality);
+        InternationalMember internationalMem = InternationalMemBuilder.getInternationalMember(memCode,memName,nationality,internationalMemID);
 
         System.out.println(internationalMem);
         Assert.assertNotNull(internationalMem.getMemCode());

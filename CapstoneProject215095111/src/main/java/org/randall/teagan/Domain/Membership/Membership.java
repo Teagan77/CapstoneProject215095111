@@ -2,7 +2,7 @@ package org.randall.teagan.Domain.Membership;
 
 public class Membership {
 
-    private int membershipID = 00000;
+    private String membershipID = "00000";
     private MemberType memType;
 
     public Membership(){}
@@ -12,7 +12,7 @@ public class Membership {
         this.memType = memBuilder.memType;
     }
 
-    public int getMembershipID(){
+    public String getMembershipID(){
         return membershipID;
     }
 
@@ -22,10 +22,10 @@ public class Membership {
 
     public static class MembershipBuilder{
 
-        private int membershipID;
+        private String membershipID;
         private MemberType memType;
 
-        public MembershipBuilder membershipID(int membershipID){
+        public MembershipBuilder membershipID(String membershipID){
          this.membershipID = membershipID;
          return this;
         }

@@ -2,7 +2,7 @@ package org.randall.teagan.Domain.Employee;
 
 public class Mechanic extends EmployeePosition {
 
-    private String jobTitle = "Mechanic" , positionCode = "MEC002", qualCode = "NDIP MECHENG";
+    private String jobTitle = "Mechanic" , positionCode = "MEC002", qualCode = "NDIP MECHENG", mechanicID = "5449849";
 
     private Mechanic(){}
 
@@ -10,6 +10,7 @@ public class Mechanic extends EmployeePosition {
         this.jobTitle = mechanicBuilder.jobTitle;
         this.positionCode = mechanicBuilder.positionCode;
         this.qualCode = mechanicBuilder.qualCode;
+        this.mechanicID = mechanicBuilder.mechanicID;
     }
 
     public String getQualCode(){
@@ -26,9 +27,13 @@ public class Mechanic extends EmployeePosition {
         return positionCode;
     }
 
+    public String getMechanicID() {
+        return mechanicID;
+    }
+
     public static class MechanicBuilder{
 
-        private String jobTitle, positionCode, qualCode;
+        private String jobTitle, positionCode, qualCode, mechanicID;
 
         public MechanicBuilder jobTitle(String jobTitle) {
             this.jobTitle = jobTitle;
@@ -45,6 +50,11 @@ public class Mechanic extends EmployeePosition {
             return this;
         }
 
+        public MechanicBuilder mechanicID(String mechanicID){
+            this.mechanicID = mechanicID;
+            return this;
+        }
+
         public Mechanic build() {
             return new Mechanic(this);
         }
@@ -57,6 +67,7 @@ public class Mechanic extends EmployeePosition {
                 " positionCode ='" + getPositionCode() + '\'' +
                 " jobTitle ='" + getJobTitle() + '\'' +
                 " qualCode ='" + getQualCode() + '\'' +
+                " mechanicID ='" + getMechanicID() + '\'' +
                 '}';
     }
 }

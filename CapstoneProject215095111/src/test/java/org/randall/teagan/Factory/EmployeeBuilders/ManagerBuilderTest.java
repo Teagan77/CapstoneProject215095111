@@ -13,8 +13,9 @@ public class ManagerBuilderTest {
         String jobTitle = "IssueStaff";
         String positionCode = "IS002";
         String qualCode = "BTECH5520";
+        String managerID = "48464";
 
-        Manager firstManager = ManagerBuilder.getManager(jobTitle,positionCode,qualCode);
+        Manager firstManager = ManagerBuilder.getManager(jobTitle,positionCode,qualCode,managerID);
 
         System.out.println(firstManager);
         Assert.assertNotNull(firstManager.getQualCode());

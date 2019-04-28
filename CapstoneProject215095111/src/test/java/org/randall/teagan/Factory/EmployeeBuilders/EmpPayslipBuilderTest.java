@@ -15,8 +15,9 @@ public class EmpPayslipBuilderTest {
 
         double salary = 20000.00;
         Date date = new Date();
+        String payslipID = "88844";
 
-        EmployeePayslip firstPayslip = EmpPayslipBuilder.getEmpPayslip(salary,date);
+        EmployeePayslip firstPayslip = EmpPayslipBuilder.getEmpPayslip(salary,date,payslipID);
 
         System.out.println(firstPayslip);
         Assert.assertNotNull(firstPayslip.getPayDate());

@@ -13,8 +13,9 @@ public class MechanicBuilderTest {
         String jobTitle = "Mechanic";
         String positionCode = "ME003";
         String qualCode = "NDIPMECHENG";
+        String mechanicID = "UH087807";
 
-        Mechanic firstMech = MechanicBuilder.getMechanic(jobTitle,positionCode,qualCode);
+        Mechanic firstMech = MechanicBuilder.getMechanic(jobTitle,positionCode,qualCode, mechanicID);
 
         System.out.println(firstMech);
         Assert.assertNotNull(firstMech.getQualCode());

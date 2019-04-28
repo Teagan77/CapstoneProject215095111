@@ -21,7 +21,7 @@ public class CustomerTest {
     String gender = "male";
     Membership membership = new Membership();
 
-    Customer firstCust = CustBuilder.getCustomer(id, phone, name,surname,age,credit,gender,membership) ;
+    Customer firstCust = CustBuilder.getCustomer(id, phone, age, name, surname, credit, gender, membership) ;
 
     @Test
     public void getCustId() {

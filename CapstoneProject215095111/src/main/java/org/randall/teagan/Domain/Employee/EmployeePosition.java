@@ -12,11 +12,11 @@ public class EmployeePosition{
     }
 
     public String getJobTitle(){
-        return "Default Jobtitle.";
+        return jobTitle;
     }
 
     public String getPositionCode(){
-        return "DEF0000";
+        return positionCode;
     }
 
     public static class EmployeePositionBuilder{

@@ -6,10 +6,11 @@ import java.util.Date;
 
 public class EmpPayslipBuilder {
 
-    public static EmployeePayslip getEmpPayslip(double grossPay, Date payDate) {
+    public static EmployeePayslip getEmpPayslip(double grossPay, Date payDate, String payslipID) {
         return new EmployeePayslip.EmpPayslipBuilder()
                 .grossPay(grossPay)
                 .payDate(payDate)
+                .payslipID(payslipID)
                 .build();
     }
 }

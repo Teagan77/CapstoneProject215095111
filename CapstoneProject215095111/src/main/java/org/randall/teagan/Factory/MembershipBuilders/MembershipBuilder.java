@@ -5,7 +5,7 @@ import org.randall.teagan.Domain.Membership.Membership;
 
 public class MembershipBuilder {
 
-    public static Membership getMembership(MemberType memType, int membershipID) {
+    public static Membership getMembership(MemberType memType, String membershipID) {
         return new Membership.MembershipBuilder()
                 .memType(memType)
                 .membershipID(membershipID)

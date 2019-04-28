@@ -5,6 +5,7 @@ public class InternationalMember {
     private String memCode = "I002";
     private String memTypeName = "International Membership";
     private String nationality;
+    private String internationalMemID = "45646";
 
     public InternationalMember(){}
 
@@ -12,6 +13,7 @@ public class InternationalMember {
         this.memCode = internationalMemBuilder.memCode;
         this.memTypeName = internationalMemBuilder.memTypeName;
         this.nationality = internationalMemBuilder.nationality;
+        this.internationalMemID = internationalMemBuilder.internationalMemID;
     }
 
     public String getMemCode() {
@@ -26,11 +28,17 @@ public class InternationalMember {
         return nationality;
     }
 
+    public String getInternationalMemID() {
+        return internationalMemID;
+    }
+
     public static class InternationalMemBuilder{
 
         private String memCode;
         private String memTypeName;
         private String nationality;
+        private String internationalMemID;
+
 
         public InternationalMemBuilder memCode(String memCode){
             this.memCode = memCode;
@@ -47,6 +55,11 @@ public class InternationalMember {
             return this;
         }
 
+        public InternationalMemBuilder internationalMemID(String internationalMemID){
+            this.internationalMemID = internationalMemID;
+            return this;
+        }
+
         public InternationalMember build() {
             return new InternationalMember(this);
         }
@@ -57,6 +70,7 @@ public class InternationalMember {
                 " membershipCode ='" + getMemCode() + '\'' +
                 " membershipTypeName ='" + getMemTypeName() + '\'' +
                 " nationality ='" + getNationality() + '\'' +
+                " internationalMemID ='" + getInternationalMemID() + '\'' +
                 '}';
     }
 }

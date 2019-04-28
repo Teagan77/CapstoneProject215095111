@@ -2,7 +2,7 @@ package org.randall.teagan.Domain.Employee;
 
 public class Driver extends EmployeePosition {
 
-    private String jobTitle = "Driver", positionCode = "DRV001", licenseCode = "Code C";
+    private String jobTitle = "Driver", positionCode = "DRV001", licenseCode = "Code C", driverID = "00000";
 
     private Driver(){}
 
@@ -10,6 +10,7 @@ public class Driver extends EmployeePosition {
         this.jobTitle = driverBuilder.jobTitle;
         this.licenseCode = driverBuilder.licenseCode;
         this.positionCode = driverBuilder.positionCode;
+        this.driverID = driverBuilder.driverID;
     }
 
     public String getLicenseCode(){
@@ -26,9 +27,13 @@ public class Driver extends EmployeePosition {
         return positionCode;
     }
 
+    public String getDriverID() {
+        return driverID;
+    }
+
     public static class DriverBuilder{
 
-        private String jobTitle, positionCode, licenseCode;
+        private String jobTitle, positionCode, licenseCode, driverID;
 
         public DriverBuilder jobTitle(String jobTitle) {
             this.jobTitle = jobTitle;
@@ -45,6 +50,11 @@ public class Driver extends EmployeePosition {
             return this;
         }
 
+        public DriverBuilder driverID(String driverID){
+            this.driverID = driverID;
+            return this;
+        }
+
         public Driver build() {
             return new Driver(this);
         }
@@ -57,6 +67,7 @@ public class Driver extends EmployeePosition {
                 " positionCode ='" + getPositionCode() + '\'' +
                 " jobTitle ='" + getJobTitle() + '\'' +
                 " licenseCode ='" + getLicenseCode() + '\'' +
+                " driverCode ='" + getDriverID() + '\'' +
                 '}';
     }
 }

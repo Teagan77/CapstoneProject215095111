@@ -2,7 +2,7 @@ package org.randall.teagan.Domain.Trip;
 
 public class Route {
 
-    private String startLocation, endLocation, routeName;
+    private String startLocation, endLocation, routeName, routeID;
 
     public Route(){}
 
@@ -10,6 +10,7 @@ public class Route {
         this.startLocation = routeBuilder.startLocation;
         this.endLocation = routeBuilder.endLocation;
         this.routeName = routeBuilder.routeName;
+        this.routeID = routeBuilder.routeID;
     }
 
     public String getStartLocation() {
@@ -24,9 +25,13 @@ public class Route {
         return routeName;
     }
 
+    public String getRouteID() {
+        return routeID;
+    }
+
     public static class RouteBuilder{
 
-        private String startLocation, endLocation, routeName;
+        private String startLocation, endLocation, routeName, routeID;
 
         public RouteBuilder startLocation(String startLocation){
             this.startLocation = startLocation;
@@ -40,6 +45,11 @@ public class Route {
 
         public RouteBuilder routeName(String routeName){
             this.routeName = routeName;
+            return this;
+        }
+
+        public RouteBuilder routeID(String routeID){
+            this.routeID = routeID;
             return this;
         }
 

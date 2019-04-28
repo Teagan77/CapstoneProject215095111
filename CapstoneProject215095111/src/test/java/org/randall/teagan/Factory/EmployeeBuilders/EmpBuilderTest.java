@@ -26,9 +26,10 @@ public class EmpBuilderTest {
         int postalAddress = 5280;
         int postalCode = 4280;
         String contactNo = "0725986625";
+        String payslipID = "54655";
 
         EmployeePosition position = EmpPosBuilder.getEmpPos(jobTitle,posCode);
-        EmployeePayslip payslip = EmpPayslipBuilder.getEmpPayslip(pay, date);
+        EmployeePayslip payslip = EmpPayslipBuilder.getEmpPayslip(pay, date,payslipID);
         EmpAddress address = EmpAddressBuilder.getEmpAddress(physicalAddress, postalAddress, postalCode);
         EmpContact contact = EmpContactBuilder.getEmpContact(contactNo);
 

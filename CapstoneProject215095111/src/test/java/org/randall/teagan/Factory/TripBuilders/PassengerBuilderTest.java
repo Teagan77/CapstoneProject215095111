@@ -45,15 +45,17 @@ public class PassengerBuilderTest {
         int capacity = 40;
         String busTypeCode = "L839";
         String busTypeName = "MidiBus";
+        String routeID = "87382";
+        String driverID = "0051";
 
-        Driver driver = DriverBuilder.getDriver(jobTitle,posCode,licenseCode);
+        Driver driver = DriverBuilder.getDriver(jobTitle,posCode,licenseCode, driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id,name,surname,phone,custAge,credit,gender, membership);
+        Customer firstCust = CustBuilder.getCustomer(id, phone, custAge, name, surname, credit, gender, membership);
 
         ArrayList<Customer> passengers = new ArrayList<>();
         passengers.add(firstCust);
 
-        Route route = RouteBuilder.getRoute(startLoc,endLoc,routeName);
+        Route route = RouteBuilder.getRoute(startLoc,endLoc,routeName, routeID);
 
         BusType busType = BusTypeBuilder.getBusType(busTypeCode,busTypeName);
 

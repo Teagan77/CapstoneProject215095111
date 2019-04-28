@@ -12,7 +12,7 @@ public class MembershipBuilderTest {
     @Test
     public void getMembership() {
 
-        int memId = 15156515;
+        String memId = "15156515";
         String memCode = "ST002";
         String memTypeName = "FullMember" ;
         MemberType memberType = MemTypeBuilder.getMemberType(memCode,memTypeName);

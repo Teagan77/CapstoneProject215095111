@@ -14,8 +14,9 @@ public class RouteBuilderTest {
         String startLoc = "CapeTown";
         String endLoc = "Belville";
         String routeName = "BZ304";
+        String routeID = "63636";
 
-        Route route = RouteBuilder.getRoute(startLoc,endLoc,routeName);
+        Route route = RouteBuilder.getRoute(startLoc,endLoc,routeName, routeID);
 
         System.out.println(route);
         Assert.assertNotNull(route.getRouteName());

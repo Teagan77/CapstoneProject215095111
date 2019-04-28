@@ -9,12 +9,13 @@ import java.util.Date;
 
 public class TaskBuilder {
 
-    public static Task getEmpTask(Manager taskManager, ArrayList<Employee> employees, String taskDesc, Date dueDate) {
+    public static Task getEmpTask(Manager taskManager, ArrayList<Employee> employees, String taskDesc, Date dueDate, String taskNo) {
         return new Task.TaskBuilder()
                 .manager(taskManager)
                 .employees(employees)
                 .taskDesc(taskDesc)
                 .dueDate(dueDate)
+                .taskNo(taskNo)
                 .build();
     }
 }

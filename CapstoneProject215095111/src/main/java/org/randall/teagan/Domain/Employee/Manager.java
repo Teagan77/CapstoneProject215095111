@@ -2,7 +2,7 @@ package org.randall.teagan.Domain.Employee;
 
 public class Manager extends EmployeePosition{
 
-    private String jobTitle = "Manager" , positionCode = "MGR004", qualCode = "NDIP BUSMGM";
+    private String jobTitle = "Manager" , positionCode = "MGR004", qualCode = "NDIP BUSMGM", managerID;
 
     private Manager(){}
 
@@ -10,6 +10,7 @@ public class Manager extends EmployeePosition{
         this.jobTitle = managerBuilder.jobTitle;
         this.positionCode = managerBuilder.positionCode;
         this.qualCode = managerBuilder.qualCode;
+        this.managerID = managerBuilder.managerID;
     }
 
     public String getQualCode(){
@@ -26,9 +27,13 @@ public class Manager extends EmployeePosition{
         return positionCode;
     }
 
+    public String getManagerID() {
+        return managerID;
+    }
+
     public static class ManagerBuilder{
 
-        private String jobTitle, positionCode, qualCode;
+        private String jobTitle, positionCode, qualCode, managerID;
 
         public ManagerBuilder jobTitle(String jobTitle) {
             this.jobTitle = jobTitle;
@@ -45,6 +50,11 @@ public class Manager extends EmployeePosition{
             return this;
         }
 
+        public ManagerBuilder managerID(String managerID){
+            this.managerID = managerID;
+            return this;
+        }
+
         public Manager build() {
             return new Manager(this);
         }
@@ -57,6 +67,7 @@ public class Manager extends EmployeePosition{
                 " positionCode ='" + getPositionCode() + '\'' +
                 " jobTitle ='" + getJobTitle() + '\'' +
                 " qualCode ='" + getQualCode() + '\'' +
+                " managerID ='" + getManagerID() + '\'' +
                 '}';
     }
 }

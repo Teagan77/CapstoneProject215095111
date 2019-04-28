@@ -30,19 +30,22 @@ public class TaskBuilderTest {
         int postalCode = 4280;
         String contactNo = "0725986625";
         String taskDesc = "A task.";
+        String taskNo = "76392";
+        String managerID = "46846";
+        String payslipID = "65464";
 
         EmployeePosition position = EmpPosBuilder.getEmpPos(jobTitle,posCode);
-        EmployeePayslip payslip = EmpPayslipBuilder.getEmpPayslip(pay, date);
+        EmployeePayslip payslip = EmpPayslipBuilder.getEmpPayslip(pay, date,payslipID);
         EmpAddress address = EmpAddressBuilder.getEmpAddress(physicalAddress, postalAddress, postalCode);
         EmpContact contact = EmpContactBuilder.getEmpContact(contactNo);
 
         Employee firstEmp = EmpBuilder.getEmployee(id,name,surname,age,gender,position,payslip,address,contact);
-        Manager firstManager = ManagerBuilder.getManager(jobTitle,posCode,qualCode);
+        Manager firstManager = ManagerBuilder.getManager(jobTitle,posCode,qualCode, managerID);
 
         ArrayList<Employee> employees = new ArrayList<>();
         employees.add(firstEmp);
 
-        Task task = TaskBuilder.getEmpTask(firstManager,employees, taskDesc,date);
+        Task task = TaskBuilder.getEmpTask(firstManager,employees, taskDesc,date,taskNo);
 
         System.out.println(task);
         Assert.assertNotNull(task.getEmployees());
