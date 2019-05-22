@@ -1,8 +1,6 @@
 package org.randall.teagan.Domain.Employee;
 
-import org.randall.teagan.Domain.Services.Person;
-
-public class Employee implements Person {
+public class Employee{
 
     private int empAge;
     private String empName, empSurname, empId, empGender;
@@ -25,7 +23,7 @@ public class Employee implements Person {
         this.empContact = empBuilder.empContact;
     }
 
-    public String getId() {
+    public String getEmpId() {
         return empId;
     }
 
@@ -45,22 +43,19 @@ public class Employee implements Person {
         return this.empContact;
     }
 
-    @Override
-    public String getName() {
+    public String getEmpName() {
         return empName;
     }
-    @Override
-    public String getSurname() {
+
+    public String getEmpSurname() {
         return empSurname;
     }
 
-    @Override
-    public int getAge() {
+    public int getEmpAge() {
         return empAge;
     }
 
-    @Override
-    public String getGender() {
+    public String getEmpGender() {
         return empGender;
     }
 
@@ -120,6 +115,21 @@ public class Employee implements Person {
 
         public Employee build() {
             return new Employee(this);
+        }
+
+        public Employee.EmpBuilder copy(Employee emp) {
+
+            this.empAge = emp.empAge;
+            this.empName = emp.empName;
+            this.empSurname = emp.empSurname;
+            this.empId = emp.empId;
+            this.empGender = emp.empGender;
+            this.empPos = emp.empPos;
+            this.empPay = emp.empPay;
+            this.empAddress = emp.empAddress;
+            this.empContact = emp.empContact;
+
+            return this;
         }
     }
 

@@ -77,6 +77,16 @@ public class Task {
         public Task build() {
             return new Task(this);
         }
+
+        public Task.TaskBuilder copy(Task task) {
+            this.TaskManager = task.TaskManager;
+            this.employees = task.employees;
+            this.taskDesc = task.taskDesc;
+            this.dueDate = task.dueDate;
+            this.taskNo = task.taskNo;
+
+            return this;
+        }
     }
 
     @Override

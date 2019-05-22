@@ -1,11 +1,10 @@
 package org.randall.teagan.Domain.Customer;
 
 import org.randall.teagan.Domain.Membership.Membership;
-import org.randall.teagan.Domain.Services.Person;
 
-public class Customer implements Person {
+public class Customer{
 
-    private String custId, custPhone, custName, custLastName, custGender;
+    private String custId, custPhone, custName, custLName, custGender;
     private int custAge;
     private double custCredit;
     private Membership membership;
@@ -14,10 +13,10 @@ public class Customer implements Person {
 
     private Customer(Builder builder) {
         this.custId = builder.custId;
-        this.custPhone = builder.custPhone;
-        this.custAge = builder.custAge;
         this.custName = builder.custName;
-        this.custLastName = builder.custLastName;
+        this.custLName = builder.custLName;
+        this.custAge = builder.custAge;
+        this.custPhone = builder.custPhone;
         this.custCredit = builder.custCredit;
         this.custGender = builder.custGender;
         this.membership = builder.membership;
@@ -27,31 +26,26 @@ public class Customer implements Person {
         return custId;
     }
 
+    public String getCustName() {
+        return custName;
+    }
+
+    public String getCustLastName() {return custLName;}
+
+    public int getCustAge() {
+        return custAge;
+    }
+
     public String getCustPhone() {
         return custPhone;
     }
 
-    @Override
-    public String getName() {
-        return custName;
-    }
-
-    @Override
-    public String getSurname() {
-        return custLastName;
-    }
-
-    public int getAge() {
-        return custAge;
-    }
-
-    @Override
-    public String getGender() {
-        return custGender;
-    }
-
-    public double getCredit() {
+    public double getCustCredit() {
         return custCredit;
+    }
+
+    public String getCustGender() {
+        return custGender;
     }
 
     public Membership getMembership() {
@@ -60,7 +54,7 @@ public class Customer implements Person {
 
     public static class Builder {
 
-        private String custId, custPhone, custName, custLastName, custGender;
+        private String custId, custPhone, custName, custLName, custGender;
         private int custAge;
         private double custCredit;
         private Membership membership;
@@ -75,8 +69,8 @@ public class Customer implements Person {
             return this;
         }
 
-        public Builder custLastName(String custLastName) {
-            this.custLastName = custLastName;
+        public Builder custLName(String custLastName){
+            this.custLName = custLastName;
             return this;
         }
 
@@ -105,22 +99,33 @@ public class Customer implements Person {
             return this;
         }
 
+        public Builder copy(Customer customer){
+            this.custId = customer.custId;
+            this.custName = customer.custName;
+            this.custLName = customer.custLName;
+            this.custAge = customer.custAge;
+            this.custPhone = customer.custPhone;
+            this.custCredit = customer.custCredit;
+            this.custGender = customer.custGender;
+            this.membership = customer.membership;
+
+            return this;
+        }
+
         public Customer build() {
             return new Customer(this);
         }
-
     }
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "custID ='" + getCustId() + '\'' +
-                ", custName ='" + getName() + '\'' +
-                ", custLastName ='" + getSurname() + '\'' +
-                ", age =" + getAge() +
-                ", custPhone ='" + getCustPhone() + '\'' +
-                ", custCredit ='" + getCredit() + '\'' +
-                ", membership ='" + getMembership() + '\'' +
-                '}';
+        return "ID = " + custId + "\t" +
+                "Name = " + custName + "\t" +
+                "Surname = " + custLName + "\t" +
+                "Age = " + custAge + "\t" +
+                "Phone = " + custPhone + "\t" +
+                "Credit = " + custCredit + "\t" +
+                "Gender = " + custGender + "\t" +
+                "Membership = " + membership;
     }
 }

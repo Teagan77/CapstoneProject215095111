@@ -38,6 +38,12 @@ public class Membership {
         public Membership build() {
             return new Membership(this);
         }
+
+        public Membership.MembershipBuilder copy(Membership membership) {
+            this.membershipID = membership.membershipID;
+            this.memType = membership.memType;
+            return this;
+        }
     }
 
     @Override

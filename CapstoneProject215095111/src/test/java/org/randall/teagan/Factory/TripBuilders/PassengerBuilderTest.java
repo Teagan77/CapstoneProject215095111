@@ -50,7 +50,7 @@ public class PassengerBuilderTest {
 
         Driver driver = DriverBuilder.getDriver(jobTitle,posCode,licenseCode, driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id, phone, custAge, name, surname, credit, gender, membership);
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership);
 
         ArrayList<Customer> passengers = new ArrayList<>();
         passengers.add(firstCust);
@@ -63,9 +63,9 @@ public class PassengerBuilderTest {
 
         Trip trip = TripBuilder.getTrip(tripNo,date,driver,passengers,route,vehicle);
 
-        Passenger firstPassenger = PassengerBuilder.getPassenger(firstCust, trip);
+        Passenger firstPassenger = PassengerBuilder.getPassenger(firstCust);
 
         System.out.println(firstPassenger);
-        Assert.assertNotNull(firstPassenger.getCurrentTrip());
+        Assert.assertNotNull(firstPassenger.getPassenger());
     }
 }

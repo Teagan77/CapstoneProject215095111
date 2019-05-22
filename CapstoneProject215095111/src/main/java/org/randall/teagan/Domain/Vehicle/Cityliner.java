@@ -36,6 +36,12 @@ public class Cityliner {
         public Cityliner build() {
             return new Cityliner(this);
         }
+
+        public CitylinerBuilder copy(Cityliner cityliner) {
+            this.busTypeCode = cityliner.busTypeCode;
+            this.busTypeName = cityliner.busTypeName;
+            return this;
+        }
     }
     @Override
     public String toString() {

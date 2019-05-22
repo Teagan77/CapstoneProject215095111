@@ -1,30 +1,28 @@
 package org.randall.teagan.Domain.Employee;
 
-public class Driver extends EmployeePosition {
+public class Driver{
 
-    private String jobTitle = "Driver", positionCode = "DRV001", licenseCode = "Code C", driverID = "00000";
+    private String jobTitleDriver, positionCodeDriver, licenseCodeDriver, driverID;
 
     private Driver(){}
 
     private Driver(DriverBuilder driverBuilder){
-        this.jobTitle = driverBuilder.jobTitle;
-        this.licenseCode = driverBuilder.licenseCode;
-        this.positionCode = driverBuilder.positionCode;
+        this.jobTitleDriver = driverBuilder.jobTitleDriver;
+        this.licenseCodeDriver = driverBuilder.licenseCodeDriver;
+        this.positionCodeDriver = driverBuilder.positionCodeDriver;
         this.driverID = driverBuilder.driverID;
     }
 
-    public String getLicenseCode(){
-        return licenseCode;
+    public String getDriverLicenseCode(){
+        return licenseCodeDriver;
     }
 
-    @Override
-    public String getJobTitle(){
-        return jobTitle;
+    public String getDriverJobTitle(){
+        return jobTitleDriver;
     }
 
-    @Override
-    public String getPositionCode(){
-        return positionCode;
+    public String getDriverPositionCode(){
+        return positionCodeDriver;
     }
 
     public String getDriverID() {
@@ -33,20 +31,20 @@ public class Driver extends EmployeePosition {
 
     public static class DriverBuilder{
 
-        private String jobTitle, positionCode, licenseCode, driverID;
+        private String jobTitleDriver, positionCodeDriver, licenseCodeDriver, driverID;
 
-        public DriverBuilder jobTitle(String jobTitle) {
-            this.jobTitle = jobTitle;
+        public DriverBuilder jobTitleDriver(String jobTitleDriver) {
+            this.jobTitleDriver = jobTitleDriver;
             return this;
         }
 
-        public DriverBuilder positionCode(String positionCode) {
-            this.positionCode = positionCode;
+        public DriverBuilder positionCodeDriver(String positionCodeDriver) {
+            this.positionCodeDriver = positionCodeDriver;
             return this;
         }
 
-        public DriverBuilder licenseCode(String licenseCode){
-            this.licenseCode = licenseCode;
+        public DriverBuilder licenseCode(String licenseCodeDriver){
+            this.licenseCodeDriver = licenseCodeDriver;
             return this;
         }
 
@@ -59,14 +57,22 @@ public class Driver extends EmployeePosition {
             return new Driver(this);
         }
 
+        public DriverBuilder copy(Driver driver){
+            this.jobTitleDriver = driver.jobTitleDriver;
+            this.licenseCodeDriver = driver.licenseCodeDriver;
+            this.positionCodeDriver = driver.positionCodeDriver;
+            this.driverID = driver.driverID;
+
+            return this;
+        }
     }
 
     @Override
     public String toString() {
         return "EmployeePosition{" +
-                " positionCode ='" + getPositionCode() + '\'' +
-                " jobTitle ='" + getJobTitle() + '\'' +
-                " licenseCode ='" + getLicenseCode() + '\'' +
+                " positionCode ='" + getDriverPositionCode() + '\'' +
+                " jobTitle ='" + getDriverJobTitle() + '\'' +
+                " licenseCode ='" + getDriverLicenseCode() + '\'' +
                 " driverCode ='" + getDriverID() + '\'' +
                 '}';
     }

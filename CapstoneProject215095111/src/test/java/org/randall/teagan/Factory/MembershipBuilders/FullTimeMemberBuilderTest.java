@@ -13,8 +13,9 @@ public class FullTimeMemberBuilderTest {
 
         String memName = "FullMember";
         String memCode = "FT001";
+        String memID = "000987";
 
-        FullTimeMember fullmem = FullTimeMemberBuilder.getFullTimeMember(memName,memCode);
+        FullTimeMember fullmem = FullTimeMemberBuilder.getFullTimeMember(memName,memCode,memID);
 
         System.out.println(fullmem);
         Assert.assertNotNull(fullmem.getMemCode());

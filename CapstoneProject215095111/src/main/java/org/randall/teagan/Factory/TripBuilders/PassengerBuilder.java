@@ -6,10 +6,9 @@ import org.randall.teagan.Domain.Trip.Trip;
 
 public class PassengerBuilder {
 
-    public static Passenger getPassenger(Customer passenger, Trip currentTrip) {
+    public static Passenger getPassenger(Customer passenger) {
         return new Passenger.PassengerBuilder()
                 .getPassenger(passenger)
-                .getCurrentTrip(currentTrip)
                 .build();
     }
 }

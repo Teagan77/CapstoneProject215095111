@@ -4,10 +4,10 @@ import org.randall.teagan.Domain.Employee.Driver;
 
 public class DriverBuilder {
 
-    public static Driver getDriver(String jobTitle, String positionCode, String licenseCode, String driverID) {
+    public static Driver getDriver(String jobTitleDriver, String positionCodeDriver, String licenseCode, String driverID) {
         return new Driver.DriverBuilder()
-                .jobTitle(jobTitle)
-                .positionCode(positionCode)
+                .jobTitleDriver(jobTitleDriver)
+                .positionCodeDriver(positionCodeDriver)
                 .licenseCode(licenseCode)
                 .driverID(driverID)
                 .build();

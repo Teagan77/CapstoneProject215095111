@@ -2,22 +2,22 @@ package org.randall.teagan.Domain.Employee;
 
 public class IssueStaff {
 
-    private String jobTitle = "IssueStaff", positionCode = "ISS003", issuerNo;
+    private String jobTitleIssueStaff = "IssueStaff", positionCodeIssueStaff = "ISS003", issuerNo;
 
     public IssueStaff(){}
 
     private IssueStaff(IssueStaffBuilder issueStaffBuilder){
-        this.jobTitle = issueStaffBuilder.jobTitle;
-        this.positionCode = issueStaffBuilder.positionCode;
+        this.jobTitleIssueStaff = issueStaffBuilder.jobTitleIssueStaff;
+        this.positionCodeIssueStaff = issueStaffBuilder.positionCodeIssueStaff;
         this.issuerNo = issueStaffBuilder.issueNo;
     }
 
-    public String getJobTitle(){
-        return jobTitle;
+    public String getJobTitleIssueStaff(){
+        return jobTitleIssueStaff;
     }
 
-    public String getPositionCode(){
-        return positionCode;
+    public String getPositionCodeIssueStaff(){
+        return positionCodeIssueStaff;
     }
 
     public String getIssuerNo() {
@@ -26,15 +26,15 @@ public class IssueStaff {
 
     public static class IssueStaffBuilder{
 
-        private String jobTitle, positionCode, issueNo;
+        private String jobTitleIssueStaff, positionCodeIssueStaff, issueNo;
 
-        public IssueStaffBuilder jobTitle(String jobTitle) {
-            this.jobTitle = jobTitle;
+        public IssueStaffBuilder jobTitleIssueStaff(String jobTitleIssueStaff) {
+            this.jobTitleIssueStaff = jobTitleIssueStaff;
             return this;
         }
 
-        public IssueStaffBuilder positionCode(String positionCode) {
-            this.positionCode = positionCode;
+        public IssueStaffBuilder positionCodeIssueStaff(String positionCodeIssueStaff) {
+            this.positionCodeIssueStaff = positionCodeIssueStaff;
             return this;
         }
 
@@ -47,13 +47,20 @@ public class IssueStaff {
             return new IssueStaff(this);
         }
 
+        public IssueStaff.IssueStaffBuilder copy(IssueStaff saved) {
+            this.jobTitleIssueStaff = saved.jobTitleIssueStaff;
+            this.positionCodeIssueStaff = saved.positionCodeIssueStaff;
+            this.issueNo = saved.issuerNo;
+
+            return this;
+        }
     }
 
     @Override
     public String toString() {
         return "IssueStaff{" +
-                " positionCode ='" + getPositionCode() + '\'' +
-                " jobTitle ='" + getJobTitle() + '\'' +
+                " positionCode ='" + getPositionCodeIssueStaff() + '\'' +
+                " jobTitle ='" + getJobTitleIssueStaff() + '\'' +
                 " issuer Number ='" + getIssuerNo() + '\'' +
                 '}';
     }

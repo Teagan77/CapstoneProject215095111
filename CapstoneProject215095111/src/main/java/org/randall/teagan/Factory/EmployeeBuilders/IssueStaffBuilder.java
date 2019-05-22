@@ -4,10 +4,10 @@ import org.randall.teagan.Domain.Employee.IssueStaff;
 
 public class IssueStaffBuilder {
 
-    public static IssueStaff getIssueStaff(String jobTitle, String positionCode, String issuerNo) {
+    public static IssueStaff getIssueStaff(String jobTitleIssueStaff, String positionCodeIssueStaff, String issuerNo) {
         return new IssueStaff.IssueStaffBuilder()
-                .jobTitle(jobTitle)
-                .positionCode(positionCode)
+                .jobTitleIssueStaff(jobTitleIssueStaff)
+                .positionCodeIssueStaff(positionCodeIssueStaff)
                 .issueNo(issuerNo)
                 .build();
     }

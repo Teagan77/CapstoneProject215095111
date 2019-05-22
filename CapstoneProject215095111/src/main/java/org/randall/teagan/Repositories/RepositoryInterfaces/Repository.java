@@ -4,7 +4,7 @@ public interface Repository<T, ID> {
 
     T create(T t);
     T update(T t);
-    void delete(String id);
-    T read(String id);
+    void delete(ID id);
+    T read(ID id);
 
 }

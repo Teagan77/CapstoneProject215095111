@@ -16,6 +16,6 @@ public class DriverBuilderTest {
         Driver firstDriver = DriverBuilder.getDriver(jobTitle,positionCode,licenseCode,driverID);
 
         System.out.println(firstDriver);
-        Assert.assertNotNull(firstDriver.getPositionCode());
+        Assert.assertNotNull(firstDriver.getDriverPositionCode());
     }
 }

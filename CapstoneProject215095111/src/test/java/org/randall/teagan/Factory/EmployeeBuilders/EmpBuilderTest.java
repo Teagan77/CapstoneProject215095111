@@ -36,6 +36,6 @@ public class EmpBuilderTest {
         Employee firstEmp = EmpBuilder.getEmployee(id,name,surname,age,gender,position,payslip,address,contact);
 
         System.out.println(firstEmp);
-        Assert.assertNotNull(firstEmp.getId());
+        Assert.assertNotNull(firstEmp.getEmpId());
     }
 }

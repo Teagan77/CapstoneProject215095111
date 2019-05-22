@@ -5,13 +5,13 @@ import org.randall.teagan.Domain.Membership.Membership;
 
 public class CustBuilder {
 
-    public static Customer getCustomer(String custId, String custPhone,int age, String custName, String custLastName, double custCredit, String custGender, Membership membership) {
+    public static Customer getCustomer(String custId, String custName, String custLName, int age, String custPhone, double custCredit, String custGender, Membership membership) {
         return new Customer.Builder()
                 .custId(custId)
-                .custPhone(custPhone)
-                .age(age)
                 .custName(custName)
-                .custLastName(custLastName)
+                .custLName(custLName)
+                .age(age)
+                .custPhone(custPhone)
                 .custCredit(custCredit)
                 .custGender(custGender)
                 .membership(membership)

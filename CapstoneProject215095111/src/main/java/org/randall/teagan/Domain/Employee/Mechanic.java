@@ -1,5 +1,7 @@
 package org.randall.teagan.Domain.Employee;
 
+import org.randall.teagan.Domain.Customer.Customer;
+
 public class Mechanic extends EmployeePosition {
 
     private String jobTitle = "Mechanic" , positionCode = "MEC002", qualCode = "NDIP MECHENG", mechanicID = "5449849";
@@ -59,6 +61,14 @@ public class Mechanic extends EmployeePosition {
             return new Mechanic(this);
         }
 
+        public Mechanic.MechanicBuilder copy(Mechanic mechanic) {
+            this.mechanicID = mechanic.mechanicID;
+            this.jobTitle = mechanic.jobTitle;
+            this.positionCode = mechanic.positionCode;
+            this.qualCode = mechanic.qualCode;
+
+            return this;
+        }
     }
 
     @Override

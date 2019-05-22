@@ -59,6 +59,14 @@ public class Manager extends EmployeePosition{
             return new Manager(this);
         }
 
+        public Manager.ManagerBuilder copy(Manager manager) {
+            this.jobTitle = manager.jobTitle;
+            this.managerID = manager.managerID;
+            this.qualCode = manager.qualCode;
+            this.positionCode = manager.positionCode;
+
+            return this;
+        }
     }
 
     @Override

@@ -63,6 +63,15 @@ public class InternationalMember {
         public InternationalMember build() {
             return new InternationalMember(this);
         }
+
+        public InternationalMemBuilder copy(InternationalMember internationalMember) {
+            this.memCode = internationalMember.memCode;
+            this.memTypeName = internationalMember.memTypeName;
+            this.nationality = internationalMember.nationality;
+            this.internationalMemID = internationalMember.internationalMemID;
+
+            return this;
+        }
     }
     @Override
     public String toString() {

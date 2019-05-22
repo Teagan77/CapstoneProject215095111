@@ -49,7 +49,7 @@ public class TripBuilderTest {
 
         Driver driver = DriverBuilder.getDriver(jobTitle,posCode,licenseCode, driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id, phone, custAge, name, surname, credit, gender, membership);
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership );
 
         ArrayList<Customer> passengers = new ArrayList<>();
         passengers.add(firstCust);

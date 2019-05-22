@@ -21,7 +21,7 @@ public class CustomerTest {
     String gender = "male";
     Membership membership = new Membership();
 
-    Customer firstCust = CustBuilder.getCustomer(id, phone, age, name, surname, credit, gender, membership) ;
+    Customer firstCust = CustBuilder.getCustomer(id, name, surname, age, phone, credit, gender, membership) ;
 
     @Test
     public void getCustId() {
@@ -37,33 +37,33 @@ public class CustomerTest {
 
     @Test
     public void getCustName() {
-        assertEquals("getCustName() will return String value 'Teagan'.","Teagan", firstCust.getName());
-        assertEquals(firstCust.getName() instanceof String, true);
+        assertEquals("getCustName() will return String value 'Teagan'.","Teagan", firstCust.getCustName());
+        assertEquals(firstCust.getCustName() instanceof String, true);
     }
 
     @Test
     public void getCustLastName() {
-        assertEquals("getCustLastName() will return String value 'Randall'.","Randall", firstCust.getSurname());
-        assertEquals(firstCust.getSurname() instanceof String, true);
+        assertEquals("getCustLastName() will return String value 'Randall'.","Randall", firstCust.getCustLastName());
+        assertEquals(firstCust.getCustLastName() instanceof String, true);
     }
 
     @Test
     public void getAge() {
-        assertEquals("getAge() will return an Integer value '22'.",22, firstCust.getAge());
-        assertEquals(Integer.class.isInstance(firstCust.getAge()),true);
+        assertEquals("getAge() will return an Integer value '22'.",22, firstCust.getCustAge());
+        assertEquals(Integer.class.isInstance(firstCust.getCustAge()),true);
     }
 
     @Test
     public void getCredit() {
         final double delta = 1e-15;
-        assertEquals("getCredit() will return an Double value '0.0'.",0.0, firstCust.getCredit(), delta);
-        assertEquals(Double.class.isInstance(firstCust.getCredit()),true);
+        assertEquals("getCredit() will return an Double value '0.0'.",0.0, firstCust.getCustCredit(), delta);
+        assertEquals(Double.class.isInstance(firstCust.getCustCredit()),true);
     }
 
     @Test
     public void getGender() {
-        assertEquals("getGender() will return a String value 'male'.", "male",firstCust.getGender());
-        assertEquals(firstCust.getGender() instanceof String, true);
+        assertEquals("getGender() will return a String value 'male'.", "male",firstCust.getCustGender());
+        assertEquals(firstCust.getCustGender() instanceof String, true);
     }
 
     @Test

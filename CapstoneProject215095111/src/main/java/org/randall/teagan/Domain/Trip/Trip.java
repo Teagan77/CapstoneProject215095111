@@ -93,6 +93,17 @@ public class Trip {
         public Trip build() {
             return new Trip(this);
         }
+
+        public TripBuilder copy(Trip trip) {
+            this.passengers = trip.passengers;
+            this.tripDate = trip.tripDate;
+            this.tripDriver = trip.tripDriver;
+            this.tripNo = trip.tripNo;
+            this.tripRoute = trip.tripRoute;
+            this.tripVehicle = trip.tripVehicle;
+
+            return this;
+        }
     }
     @Override
     public String toString() {

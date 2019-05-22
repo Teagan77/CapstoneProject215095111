@@ -19,7 +19,7 @@ public class CustBuilderTest {
         String gender = "male";
         Membership membership = new Membership();
 
-        Customer firstCust = CustBuilder.getCustomer(id, phone, custAge, name, surname, credit, gender, membership);
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership);
 
         System.out.println(firstCust);
         Assert.assertNotNull(firstCust.getCustId());

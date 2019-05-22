@@ -1,5 +1,7 @@
 package org.randall.teagan.Domain.Membership;
 
+import org.randall.teagan.Domain.Customer.Customer;
+
 public class StudentMember extends MemberType{
 
     private String memCode = "S001";
@@ -49,6 +51,14 @@ public class StudentMember extends MemberType{
 
         public StudentMember build() {
             return new StudentMember(this);
+        }
+
+        public StudentMember.StudentMemBuilder copy(StudentMember saved) {
+            this.memCode = saved.memCode;
+            this.memTypeName = saved.memTypeName;
+            this.studNo = saved.studNo;
+
+            return this;
         }
     }
     @Override

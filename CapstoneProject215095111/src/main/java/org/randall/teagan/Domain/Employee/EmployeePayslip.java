@@ -54,6 +54,14 @@ public class EmployeePayslip {
         public EmployeePayslip build() {
             return new EmployeePayslip(this);
         }
+
+        public EmployeePayslip.EmpPayslipBuilder copy(EmployeePayslip employeePayslip) {
+            this.grossPay = employeePayslip.grossPay;
+            this.payslipID = employeePayslip.payslipID;
+            this.payDate = employeePayslip.payDate;
+
+            return this;
+        }
     }
 
     @Override

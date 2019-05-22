@@ -1,5 +1,7 @@
 package org.randall.teagan.Domain.Trip;
 
+import org.randall.teagan.Domain.Customer.Customer;
+
 public class Route {
 
     private String startLocation, endLocation, routeName, routeID;
@@ -55,6 +57,15 @@ public class Route {
 
         public Route build() {
             return new Route(this);
+        }
+
+        public Route.RouteBuilder copy(Route saved) {
+            this.endLocation = saved.endLocation;
+            this.routeID = saved.routeID;
+            this.routeName = saved.routeName;
+            this.startLocation = saved.startLocation;
+
+            return this;
         }
     }
     @Override

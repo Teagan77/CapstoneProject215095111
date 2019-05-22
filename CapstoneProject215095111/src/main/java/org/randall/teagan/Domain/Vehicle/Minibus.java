@@ -1,5 +1,7 @@
 package org.randall.teagan.Domain.Vehicle;
 
+import org.randall.teagan.Domain.Customer.Customer;
+
 public class Minibus {
 
     private String busTypeCode = "B002", busTypeName = "Minibus";
@@ -35,6 +37,13 @@ public class Minibus {
 
         public Minibus build() {
             return new Minibus(this);
+        }
+
+        public Minibus.MinibusBuilder copy(Minibus minibus) {
+            this.busTypeCode = minibus.busTypeCode;
+            this.busTypeName = minibus.busTypeName;
+
+            return this;
         }
     }
     @Override

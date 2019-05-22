@@ -50,6 +50,14 @@ public class Vehicle {
         public Vehicle build() {
             return new Vehicle(this);
         }
+
+        public Vehicle.VehicleBuilder copy(Vehicle vehicle) {
+            this.busType = vehicle.busType;
+            this.capacity = vehicle.capacity;
+            this.registration = vehicle.registration;
+
+            return this;
+        }
     }
     @Override
     public String toString() {

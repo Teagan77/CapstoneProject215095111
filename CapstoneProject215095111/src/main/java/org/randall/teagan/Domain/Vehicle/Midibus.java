@@ -36,6 +36,13 @@ public class Midibus {
         public Midibus build() {
             return new Midibus(this);
         }
+
+        public MidibusBuilder copy(Midibus midibus) {
+            this.busTypeCode = midibus.busTypeCode;
+            this.busTypeName = midibus.busTypeName;
+
+            return this;
+        }
     }
     @Override
     public String toString() {
