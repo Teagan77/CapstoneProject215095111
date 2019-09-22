@@ -1,36 +1,32 @@
 package org.randall.teagan.Domain.Customer;
 
-import org.randall.teagan.Domain.Membership.Membership;
+public class Customer {
 
-public class Customer{
-
-    private String custId, custPhone, custName, custLName, custGender;
+    private String customerID, custPhone, custName, custLastName;
     private int custAge;
-    private double custCredit;
-    private Membership membership;
 
-    private Customer(){}
-
-    private Customer(Builder builder) {
-        this.custId = builder.custId;
-        this.custName = builder.custName;
-        this.custLName = builder.custLName;
-        this.custAge = builder.custAge;
-        this.custPhone = builder.custPhone;
-        this.custCredit = builder.custCredit;
-        this.custGender = builder.custGender;
-        this.membership = builder.membership;
+    private Customer() {
     }
 
-    public String getCustId() {
-        return custId;
+    private Customer(Builder builder) {
+        this.customerID = builder.customerID;
+        this.custName = builder.custName;
+        this.custLastName = builder.custLastName;
+        this.custAge = builder.custAge;
+        this.custPhone = builder.custPhone;
+    }
+
+    public String getcustomerID() {
+        return customerID;
     }
 
     public String getCustName() {
         return custName;
     }
 
-    public String getCustLastName() {return custLName;}
+    public String getCustLastName() {
+        return custLastName;
+    }
 
     public int getCustAge() {
         return custAge;
@@ -40,27 +36,13 @@ public class Customer{
         return custPhone;
     }
 
-    public double getCustCredit() {
-        return custCredit;
-    }
-
-    public String getCustGender() {
-        return custGender;
-    }
-
-    public Membership getMembership() {
-        return membership;
-    }
-
     public static class Builder {
 
-        private String custId, custPhone, custName, custLName, custGender;
+        private String customerID, custPhone, custName, custLastName;
         private int custAge;
-        private double custCredit;
-        private Membership membership;
 
-        public Builder custId(String custId) {
-            this.custId = custId;
+        public Builder customerID(String customerID) {
+            this.customerID = customerID;
             return this;
         }
 
@@ -69,8 +51,8 @@ public class Customer{
             return this;
         }
 
-        public Builder custLName(String custLastName){
-            this.custLName = custLastName;
+        public Builder custLastName(String custLastName) {
+            this.custLastName = custLastName;
             return this;
         }
 
@@ -79,36 +61,17 @@ public class Customer{
             return this;
         }
 
-        public Builder custPhone(String custPhone){
+        public Builder custPhone(String custPhone) {
             this.custPhone = custPhone;
             return this;
         }
 
-        public Builder custCredit(double custCredit){
-            this.custCredit = custCredit;
-            return this;
-        }
-
-        public Builder custGender(String custGender){
-            this.custGender = custGender;
-            return this;
-        }
-
-        public Builder membership(Membership membership){
-            this.membership = membership;
-            return this;
-        }
-
-        public Builder copy(Customer customer){
-            this.custId = customer.custId;
+        public Builder copy(Customer customer) {
+            this.customerID = customer.customerID;
             this.custName = customer.custName;
-            this.custLName = customer.custLName;
+            this.custLastName = customer.custLastName;
             this.custAge = customer.custAge;
             this.custPhone = customer.custPhone;
-            this.custCredit = customer.custCredit;
-            this.custGender = customer.custGender;
-            this.membership = customer.membership;
-
             return this;
         }
 
@@ -119,13 +82,10 @@ public class Customer{
 
     @Override
     public String toString() {
-        return "ID = " + custId + "\t" +
+        return "ID = " + customerID + "\t" +
                 "Name = " + custName + "\t" +
-                "Surname = " + custLName + "\t" +
+                "Surname = " + custLastName + "\t" +
                 "Age = " + custAge + "\t" +
-                "Phone = " + custPhone + "\t" +
-                "Credit = " + custCredit + "\t" +
-                "Gender = " + custGender + "\t" +
-                "Membership = " + membership;
+                "Phone = " + custPhone + "\t";
     }
 }

@@ -12,6 +12,7 @@ public class EmpBuilderTest {
 
     @Test
     public void getEmployee() {
+
         String name = "Teagan";
         String surname = "Randall";
         String phone = "0734771369";
@@ -28,12 +29,12 @@ public class EmpBuilderTest {
         String contactNo = "0725986625";
         String payslipID = "54655";
 
-        EmployeePosition position = EmpPosBuilder.getEmpPos(jobTitle,posCode);
-        EmployeePayslip payslip = EmpPayslipBuilder.getEmpPayslip(pay, date,payslipID);
+        EmployeePosition position = EmpPosBuilder.getEmpPos(jobTitle, posCode);
+        EmployeePayslip payslip = EmpPayslipBuilder.getEmpPayslip(pay, date, payslipID);
         EmpAddress address = EmpAddressBuilder.getEmpAddress(physicalAddress, postalAddress, postalCode);
         EmpContact contact = EmpContactBuilder.getEmpContact(contactNo);
 
-        Employee firstEmp = EmpBuilder.getEmployee(id,name,surname,age,gender,position,payslip,address,contact);
+        Employee firstEmp = EmpBuilder.getEmployee(id, name, surname, age, gender, position, payslip, address, contact);
 
         System.out.println(firstEmp);
         Assert.assertNotNull(firstEmp.getEmpId());

@@ -3,6 +3,7 @@ package org.randall.teagan.Repositories.Implementation.CustomerRepositoryImpl;
 import org.randall.teagan.Domain.Customer.Customer;
 import org.randall.teagan.Repositories.RepositoryInterfaces.CustomerRepositoryInterface.CustomerRepository;
 import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 
 @Repository("CustomerRepository")
@@ -32,7 +33,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public Customer update(Customer cust) {
 
-        Customer toDelete = getCust(cust.getCustId());
+        Customer toDelete = getCust(cust.getcustomerID());
         if (toDelete != null) {
             this.customers.remove(toDelete);
             return create(cust);
@@ -45,7 +46,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
         for (int i = 0; i < customers.size(); i++) {
 
-            if (customers.get(i).getCustId().equals(id)) {
+            if (customers.get(i).getcustomerID().equals(id)) {
                 customers.remove(i);
             }
         }
@@ -55,18 +56,17 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     public Customer read(String id) {
 
         for (Customer customer : customers) {
-            if (customer.getCustId().equals(id)) {
+            if (customer.getcustomerID().equals(id)) {
                 return customer;
             }
         }
         return null;
     }
 
-    //TODO remove redundant method
-    public Customer getCust(String custId) {
+    public Customer getCust(String customerID) {
 
         return this.customers.stream()
-                .filter(customer -> customer.getCustId().trim().equals(custId))
+                .filter(customer -> customer.getcustomerID().trim().equals(customerID))
                 .findAny()
                 .orElse(null);
     }

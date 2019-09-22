@@ -33,9 +33,6 @@ public class TripRepositoryImplTest {
         String phone = "0734771369";
         int custAge = 22;
         String id = "215095111";
-        double credit = 0.0;
-        String gender = "male";
-        Membership membership = new Membership();
         String tripNo = "Z34029";
         Date date = new Date();
         String jobTitle = "Driver";
@@ -53,7 +50,7 @@ public class TripRepositoryImplTest {
 
         Driver driver = DriverBuilder.getDriver(jobTitle, posCode, licenseCode, driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership);
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone);
 
         ArrayList<Customer> passengers = new ArrayList<>();
         passengers.add(firstCust);
@@ -64,9 +61,7 @@ public class TripRepositoryImplTest {
 
         Vehicle vehicle = VehicleBuilder.getVehicle(reg, busType, capacity);
 
-        Trip trip = TripBuilder.getTrip(tripNo, date, driver, passengers, route, vehicle);
-
-        return trip;
+        return TripBuilder.getTrip(tripNo, date, driver, passengers, route, vehicle);
     }
 
     public Trip getUpdatedFirstTrip() {
@@ -75,9 +70,6 @@ public class TripRepositoryImplTest {
         String phone = "0734771369";
         int custAge = 22;
         String id = "215095111";
-        double credit = 0.0;
-        String gender = "male";
-        Membership membership = new Membership();
         String tripNo = "Z34029";
         Date date = new Date();
         String jobTitle = "Driver";
@@ -95,7 +87,7 @@ public class TripRepositoryImplTest {
 
         Driver driver = DriverBuilder.getDriver(jobTitle, posCode, licenseCode, driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership);
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone);
 
         ArrayList<Customer> passengers = new ArrayList<>();
         passengers.add(firstCust);
@@ -106,9 +98,7 @@ public class TripRepositoryImplTest {
 
         Vehicle vehicle = VehicleBuilder.getVehicle(reg, busType, capacity);
 
-        Trip trip = TripBuilder.getTrip(tripNo, date, driver, passengers, route, vehicle);
-
-        return trip;
+        return TripBuilder.getTrip(tripNo, date, driver, passengers, route, vehicle);
     }
 
     public Trip getSecondTrip() {
@@ -117,9 +107,6 @@ public class TripRepositoryImplTest {
         String phone = "0253671869";
         int custAge = 20;
         String id = "216158911";
-        double credit = 0.0;
-        String gender = "male";
-        Membership membership = new Membership();
         String tripNo = "Z34429";
         Date date = new Date();
         String jobTitle = "Driver";
@@ -137,7 +124,7 @@ public class TripRepositoryImplTest {
 
         Driver driver = DriverBuilder.getDriver(jobTitle, posCode, licenseCode,driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership);
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone);
 
         ArrayList<Customer> passengers = new ArrayList<>();
         passengers.add(firstCust);
@@ -148,9 +135,7 @@ public class TripRepositoryImplTest {
 
         Vehicle vehicle = VehicleBuilder.getVehicle(reg, busType, capacity);
 
-        Trip trip = TripBuilder.getTrip(tripNo, date, driver, passengers, route, vehicle);
-
-        return trip;
+        return TripBuilder.getTrip(tripNo, date, driver, passengers, route, vehicle);
     }
 
     Trip firstTrip = getFirstTrip();

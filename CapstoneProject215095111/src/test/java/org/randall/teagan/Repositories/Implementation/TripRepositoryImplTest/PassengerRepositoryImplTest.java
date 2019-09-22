@@ -35,9 +35,6 @@ public class PassengerRepositoryImplTest {
         String phone = "0734771369";
         int custAge = 22;
         String id = "215095111";
-        double credit = 0.0;
-        String gender = "male";
-        Membership membership = new Membership();
         String tripNo = "Z34029";
         Date date = new Date();
         String jobTitle = "Driver";
@@ -55,7 +52,7 @@ public class PassengerRepositoryImplTest {
 
         Driver driver = DriverBuilder.getDriver(jobTitle, posCode, licenseCode, driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership );
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone);
 
         ArrayList<Customer> passengers = new ArrayList<Customer>();
         passengers.add(firstCust);
@@ -79,9 +76,6 @@ public class PassengerRepositoryImplTest {
         String phone = "0734771369";
         int custAge = 22;
         String id = "215095111";
-        double credit = 0.0;
-        String gender = "male";
-        Membership membership = new Membership();
         String tripNo = "Z34029";
         Date date = new Date();
         String jobTitle = "Driver";
@@ -99,7 +93,7 @@ public class PassengerRepositoryImplTest {
 
         Driver driver = DriverBuilder.getDriver(jobTitle, posCode, licenseCode,driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership );
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone);
 
         ArrayList<Customer> passengers = new ArrayList<Customer>();
         passengers.add(firstCust);
@@ -123,9 +117,6 @@ public class PassengerRepositoryImplTest {
         String phone = "0725576169";
         int custAge = 20;
         String id = "216151411";
-        double credit = 0.0;
-        String gender = "male";
-        Membership membership = new Membership();
         String tripNo = "Z34029";
         Date date = new Date();
         String jobTitle = "Driver";
@@ -143,7 +134,7 @@ public class PassengerRepositoryImplTest {
 
         Driver driver = DriverBuilder.getDriver(jobTitle, posCode, licenseCode,driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership );
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone);
 
         ArrayList<Customer> passengers = new ArrayList<Customer>();
         passengers.add(firstCust);
@@ -196,7 +187,7 @@ public class PassengerRepositoryImplTest {
     public void update() {
         this.passengerRepositoryImpl.create(firstPassenger);
         this.passengerRepositoryImpl.update(updatedFirstPassenger);
-        Assert.assertEquals("Jefferson", this.passengerRepositoryImpl.read(updatedFirstPassenger.getPassenger().getCustId()).getPassenger().getCustLastName());
+        Assert.assertEquals("Jefferson", this.passengerRepositoryImpl.read(updatedFirstPassenger.getPassenger().getcustomerID()).getPassenger().getCustLastName());
         this.passengerRepositoryImpl.removeAll();
     }
 
@@ -204,17 +195,17 @@ public class PassengerRepositoryImplTest {
     public void delete() {
         this.passengerRepositoryImpl.create(firstPassenger);
         this.passengerRepositoryImpl.create(secondPassenger);
-        this.passengerRepositoryImpl.delete(firstPassenger.getPassenger().getCustId());
+        this.passengerRepositoryImpl.delete(firstPassenger.getPassenger().getcustomerID());
 
-        Assert.assertEquals(null, this.passengerRepositoryImpl.read(firstPassenger.getPassenger().getCustId()));
+        Assert.assertEquals(null, this.passengerRepositoryImpl.read(firstPassenger.getPassenger().getcustomerID()));
         this.passengerRepositoryImpl.removeAll();
     }
 
     @Test
     public void read() {
         this.passengerRepositoryImpl.create(firstPassenger);
-        Assert.assertEquals(true, this.passengerRepositoryImpl.read(firstPassenger.getPassenger().getCustId()) instanceof Passenger);
-        System.out.println(this.passengerRepositoryImpl.read(firstPassenger.getPassenger().getCustId()));
+        Assert.assertEquals(true, this.passengerRepositoryImpl.read(firstPassenger.getPassenger().getcustomerID()) instanceof Passenger);
+        System.out.println(this.passengerRepositoryImpl.read(firstPassenger.getPassenger().getcustomerID()));
         this.passengerRepositoryImpl.removeAll();
     }
 }

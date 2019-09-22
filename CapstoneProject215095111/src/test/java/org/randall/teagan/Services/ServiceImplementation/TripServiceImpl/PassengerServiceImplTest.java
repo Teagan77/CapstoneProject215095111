@@ -27,10 +27,6 @@ import java.util.ListIterator;
 public class PassengerServiceImplTest {
 
     private PassengerRepositoryImpl passengerRepositoryImpl;
-    private Customer firstCust;
-    private Customer secondCust;
-    private Membership membership;
-    private MemberType memberType;
     private Passenger firstPassenger;
     private Passenger secondPasseger;
 
@@ -42,10 +38,8 @@ public class PassengerServiceImplTest {
     @Before
     public void setUp() throws Exception {
         this.passengerRepositoryImpl = PassengerRepositoryImpl.getPassengerRepositoryImpl();
-        this.memberType = MemTypeBuilder.getMemberType("10211", "Full-Time");
-        this.membership = MembershipBuilder.getMembership(memberType, "10111");
-        this.firstCust = CustBuilder.getCustomer("215095111", "Jeff", "Saunders",25 , "0729865543", 50.00, "Male", membership);
-        this.secondCust = CustBuilder.getCustomer("215095111", "Jahsey", "Stevens",23 , "0734771369",75.00, "Male", membership);
+        Customer firstCust = CustBuilder.getCustomer("215095111", "Jeff", "Saunders", 25, "0729865543");
+        Customer secondCust = CustBuilder.getCustomer("215095111", "Jahsey", "Stevens", 23, "0734771369");
         this.firstPassenger = PassengerBuilder.getPassenger(firstCust);
         this.secondPasseger = PassengerBuilder.getPassenger(secondCust);
     }
@@ -68,14 +62,14 @@ public class PassengerServiceImplTest {
     @Test
     public void e_delete() {
         Passenger savedPassenger = getSaved();
-        this.passengerRepositoryImpl.delete(savedPassenger.getPassenger().getCustId());
+        this.passengerRepositoryImpl.delete(savedPassenger.getPassenger().getcustomerID());
         d_getAll();
     }
 
     @Test
     public void b_read() {
         Passenger savedPassenger = getSaved();
-        Passenger readPassenger = this.passengerRepositoryImpl.read(savedPassenger.getPassenger().getCustId());
+        Passenger readPassenger = this.passengerRepositoryImpl.read(savedPassenger.getPassenger().getcustomerID());
         System.out.println("In read, read = "+ readPassenger);
         Assert.assertSame(readPassenger, savedPassenger);
     }

@@ -48,7 +48,7 @@ public class PassengerRepositoryImpl implements PassengerRepository {
 
         for(int i = 0;i < passengers.size();i++) {
 
-            if (passengers.get(i).getPassenger().getCustId().equals(passenger.getPassenger().getCustId())){
+            if (passengers.get(i).getPassenger().getcustomerID().equals(passenger.getPassenger().getcustomerID())){
                 exists = true;
                 index = i;
                 passengers.remove(i);
@@ -66,7 +66,7 @@ public class PassengerRepositoryImpl implements PassengerRepository {
     public void delete(String id) {
         for(int i = 0;i < passengers.size();i++) {
 
-            if (passengers.get(i).getPassenger().getCustId().equals(id)) {
+            if (passengers.get(i).getPassenger().getcustomerID().equals(id)) {
                 passengers.remove(i);
             }
         }
@@ -79,7 +79,7 @@ public class PassengerRepositoryImpl implements PassengerRepository {
 
         for(int i = 0;i < passengers.size();i++) {
 
-            if (passengers.get(i).getPassenger().getCustId().equals(id)) {
+            if (passengers.get(i).getPassenger().getcustomerID().equals(id)) {
                 index = i;
                 exists = true;
             }

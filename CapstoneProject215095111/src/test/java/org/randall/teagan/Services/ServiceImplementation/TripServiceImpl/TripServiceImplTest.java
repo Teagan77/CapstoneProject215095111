@@ -64,7 +64,7 @@ public class TripServiceImplTest {
         this.tripRepositoryImpl = TripRepositoryImpl.getTripRepository();
         this.membership = MembershipBuilder.getMembership(memberType, "10111");
         this.memberType = MemTypeBuilder.getMemberType("10211", "Full-Time");
-        this.firstCust = CustBuilder.getCustomer("215095111", "Jeff", "Saunders",25, "0729865543",  50.00, "Male", membership);
+        this.firstCust = CustBuilder.getCustomer("215095111", "Jeff", "Saunders",25, "0729865543");
         this.firstPassenger = PassengerBuilder.getPassenger(firstCust);
         this.passengers = new ArrayList<>();
         passengers.add(firstCust);

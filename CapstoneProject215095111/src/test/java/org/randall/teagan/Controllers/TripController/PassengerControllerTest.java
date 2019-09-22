@@ -48,9 +48,6 @@ public class PassengerControllerTest {
         String phone = "0734771369";
         int custAge = 22;
         String id = "215095111";
-        double credit = 0.0;
-        String gender = "male";
-        Membership membership = new Membership();
         String tripNo = "Z34029";
         Date date = new Date();
         String jobTitle = "Driver";
@@ -68,7 +65,7 @@ public class PassengerControllerTest {
 
         Driver driver = DriverBuilder.getDriver(jobTitle,posCode,licenseCode, driverID);
 
-        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone, credit, gender, membership);
+        Customer firstCust = CustBuilder.getCustomer(id, name, surname, custAge, phone);
 
         ArrayList<Customer> passengers = new ArrayList<>();
         passengers.add(firstCust);

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/capstone/employee")
 public class EmployeeController {
 
     @Autowired
@@ -21,27 +21,4 @@ public class EmployeeController {
         return empServiceImpl.create(employee);
     }
 
-    @PostMapping(value = "/update/")
-    @ResponseBody
-    public Employee update(@RequestBody Employee employee) {
-        return empServiceImpl.update(employee);
-    }
-
-    @GetMapping(value = "/delete/{id}")
-    @ResponseBody
-    public void delete(@PathVariable String id) {
-        empServiceImpl.delete(id);
-    }
-
-    @GetMapping(value = "/read/{id}")
-    @ResponseBody
-    public Employee read(@PathVariable String id) {
-        return empServiceImpl.read(id);
-    }
-
-    @GetMapping(value = "/readEmp/all")
-    @ResponseBody
-    public ArrayList<Employee> getAll() {
-        return empServiceImpl.getAll();
-    }
 }

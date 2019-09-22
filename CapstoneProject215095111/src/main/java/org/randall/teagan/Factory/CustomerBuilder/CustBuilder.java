@@ -1,20 +1,16 @@
 package org.randall.teagan.Factory.CustomerBuilder;
 
 import org.randall.teagan.Domain.Customer.Customer;
-import org.randall.teagan.Domain.Membership.Membership;
 
 public class CustBuilder {
 
-    public static Customer getCustomer(String custId, String custName, String custLName, int age, String custPhone, double custCredit, String custGender, Membership membership) {
+    public static Customer getCustomer(String customerID, String custName, String custLastName, int age, String custPhone) {
         return new Customer.Builder()
-                .custId(custId)
+                .customerID(customerID)
                 .custName(custName)
-                .custLName(custLName)
+                .custLastName(custLastName)
                 .age(age)
                 .custPhone(custPhone)
-                .custCredit(custCredit)
-                .custGender(custGender)
-                .membership(membership)
                 .build();
     }
 }
